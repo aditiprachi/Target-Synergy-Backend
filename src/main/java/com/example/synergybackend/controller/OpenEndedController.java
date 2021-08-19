@@ -9,7 +9,7 @@ import com.example.synergybackend.model.OpenEnded;
 
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:3000/")
+@CrossOrigin(origins = "https://targetsynergy.herokuapp.com/")
 @RestController
 public class OpenEndedController {
     @Autowired
