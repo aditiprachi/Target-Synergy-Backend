@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = "https://targetsynergy.herokuapp.com/")
+@CrossOrigin(origins = "https://targetsynergy.herokuapp.com")
 @RestController
 public class McqController {
     @Autowired

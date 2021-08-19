@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
 
-@CrossOrigin(origins = "https://targetsynergy.herokuapp.com/")
+@CrossOrigin(origins = "https://targetsynergy.herokuapp.com")
 @RestController
 public class UserController {
     @Autowired
