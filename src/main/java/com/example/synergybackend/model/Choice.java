@@ -8,56 +8,28 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.Objects;
 //@Document(collection = "choices")
 public class Choice {
-//    @Transient
-//    public static final String SEQUENCE_NUMBER ="user_sequence";
-//    @Id
-//    private int id;
-    private String text;
 
+    private String option;
+    private int votes;
 
-    public Choice() {
-
+    public Choice(String option, int votes) {
+        this.option = option;
+        this.votes = votes;
     }
 
-    public Choice(String text) {
-        this.text = text;
+    public String getOption() {
+        return option;
     }
 
-//    public int getId() {
-//        return id;
-//    }
-//
-//    public void setId(int id) {
-//        this.id = id;
-//    }
-
-    public String getText() {
-        return text;
+    public void setOption(String option) {
+        this.option = option;
     }
 
-    public void setText(String text) {
-
-        this.text = text;
+    public int getVotes() {
+        return votes;
     }
 
-//    public Poll getPoll() {
-//        return poll;
-//    }
-//
-//    public void setPoll(Poll poll) {
-//        this.poll = poll;
-//    }
-
-//    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (o == null || getClass() != o.getClass()) return false;
-//        Choice choice = (Choice) o;
-//        return Objects.equals(id, choice.id);
-//    }
-//    @Override
-//    public int hashCode() {
-//        return Objects.hash(id);
-//    }
-
+    public void setVotes(int votes) {
+        this.votes = votes;
+    }
 }

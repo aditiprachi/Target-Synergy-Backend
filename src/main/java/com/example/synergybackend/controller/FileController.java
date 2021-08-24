@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "https://targetsynergy.herokuapp.com")
+@CrossOrigin(origins = "https://targetsynergy.herokuapp.com/")
 @RequestMapping("file")
 public class FileController {
 
