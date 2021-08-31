@@ -1,20 +1,30 @@
 package com.example.synergybackend.controller;
 
 
-import com.example.synergybackend.model.Choice;
 import com.example.synergybackend.model.Mcq;
+
+import com.example.synergybackend.model.Responses;
 import com.example.synergybackend.repository.MCQRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.repository.Query;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
+
+
 import java.util.List;
+import java.util.Map;
 
 @CrossOrigin(origins = "https://targetsynergy.herokuapp.com/")
 @RestController
 public class McqController {
     @Autowired
     private MCQRepository mcqRepo;
+
+    @GetMapping("/{id}/MCQ")
+    public List<Mcq> getMcqByUser(@PathVariable("id") String id){
+        return mcqRepo.findAllByGoogleId(id);
+    }
 
     @GetMapping("/MCQ")
     public List<Mcq> getAllMcq(){
@@ -32,7 +42,7 @@ public class McqController {
         mcq.setQuestion(String.valueOf(quest.getQuestion()));
         mcq.setChoices( quest.getChoices());
         mcq.setGoogleId(quest.getGoogleId());
-//        System.out.println(mcq.getChoices());
+        mcq.setType((quest.getType()));
         Mcq savedPoll = mcqRepo.save(mcq);
         String url = "MCQ/" + savedPoll.getId();
         return url;
@@ -102,5 +112,10 @@ public class McqController {
     public Mcq getRT(@PathVariable("id") String id){
         return mcqRepo.findById(id).get();
     }
+
+
+
+
+
 
 }
