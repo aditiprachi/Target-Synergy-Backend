@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@CrossOrigin(origins = "https://targetsynergy.herokuapp.com/")
+@CrossOrigin(origins = "http://localhost:3000/")
 @RestController
 public class ResponsesController {
     @Autowired
