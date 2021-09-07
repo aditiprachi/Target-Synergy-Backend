@@ -18,10 +18,6 @@ public class UserController {
     public List<User> getAllUser(){
         return userRepository.findAll();
     }
-    @GetMapping("/user/{googleId}")
-    public User getUser(@PathVariable("googleId") String googleId){
-        return userRepository.findByGoogleId(googleId);
-    }
     @PostMapping("/user")
     public String saveBook(@RequestBody Map<String, Object> user) {
         User userr = new User();
