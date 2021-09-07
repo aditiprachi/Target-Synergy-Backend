@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 
 import java.util.Objects;
-//@Document(collection = "choices")
+//@Document(collection = "choices")r
 public class Choice {
 
     private String option;
